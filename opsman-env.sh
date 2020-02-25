@@ -5,6 +5,7 @@ if [ ! -f "terraform.tfstate" ]; then
   exit 1
 fi
 
-export OM_TARGET=$(terraform output ops_manager_host)
-export OM_USERNAME=$(terraform output ops_manager_user)
-export OM_PASSWORD=$(terraform output ops_manager_password)
+export OM_TARGET=$(terraform output opsman_url)
+export OM_USERNAME=$(terraform output opsman_username)
+export OM_PASSWORD=$(terraform output opsman_password)
+export OM_SKIP_SSL_VALIDATION=true
